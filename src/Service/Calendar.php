@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-class Calendar
+class Calendar implements CalendarInterface
 {
     /**
      * @var FrenchPublicHoliday
