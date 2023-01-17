@@ -4,8 +4,21 @@ namespace App\Service;
 
 class Calendar
 {
+    /**
+     * @var FrenchPublicHoliday
+     */
+    private $holiday;
+
+    public function __construct(FrenchPublicHoliday $holiday)
+    {
+        $this->holiday = $holiday;
+    }
+
     public function isWorkingDay(\DateTimeInterface $date): bool
     {
-        return !in_array($date->format('N'), [6, 7]);
+        return
+            !in_array($date->format('N'), [6, 7]) &&
+            !$this->holiday->isPublicHoliday($date)
+        ;
     }
 }

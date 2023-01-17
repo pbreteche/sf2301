@@ -7,7 +7,7 @@
     {% if is_working_day %}
     {{ today | format_date(locale='fr') }} est un jour ouvré
     {% else %}
-    {{ today | format_date(locale='fr') }} est le weekend
+    {{ today | format_date(locale='fr') }} est un jour non-travaillé
     {% endif %}
 </p>
 {% endblock %}
