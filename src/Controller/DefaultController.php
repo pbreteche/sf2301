@@ -17,7 +17,7 @@ class DefaultController extends AbstractController
         $today = new \DateTimeImmutable('today');
 
         // Accès direct au container est déprécié
-        // $this->get(CalendarInterface::class);
+        $this->get('twig');
 
         return $this->render('default/index.html.twig', [
             'today' => $today,
