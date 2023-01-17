@@ -14,11 +14,11 @@ class DefaultController extends AbstractController
      */
     public function index(Calendar $calendar): Response
     {
-        //$nas = new NotAService();
-        dump($calendar);
+        $today = new \DateTimeImmutable('today');
 
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            'today' => $today,
+            'is_working_day' => $calendar->isWorkingDay($today),
         ]);
     }
 }
