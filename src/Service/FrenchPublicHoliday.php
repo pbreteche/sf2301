@@ -4,7 +4,7 @@ namespace App\Service;
 
 class FrenchPublicHoliday
 {
-    private $publicHoliday = ['0105', '0805', '1407', '1508', '0111', '1111', '2512'];
+    private array $publicHoliday = ['0105', '0805', '1407', '1508', '0111', '1111', '2512'];
 
     public function __construct(bool $pentecostIsWorked)
     {
@@ -13,7 +13,7 @@ class FrenchPublicHoliday
         }
     }
 
-    public function isPublicHoliday(\DateTimeInterface $dateTime)
+    public function isPublicHoliday(\DateTimeInterface $dateTime): bool
     {
         $dm = $dateTime->format('dm');
 
